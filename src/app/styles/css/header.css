@@ -1,0 +1,56 @@
+header {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+    display: flex;
+    align-self: center;
+    width: 100%;
+    justify-content: space-around;
+}
+.account-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: white;
+}
+
+.profile-image {
+    height: 60px;
+    width: 60px;
+    border-radius: 90px;
+    border: 1px solid white;
+}
+
+.social-sign-in {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0px;
+}
+.social-sign-in a {
+    height: 40px;
+    width: 40px;
+}
+
+.cls-1 {
+    fill: #000034;
+    fill-rule: evenodd;
+  }
+
+  .sign-out-btn {
+    color: var(--error);
+    border: 1px solid var(--error);
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.4s;
+  }
+
+  .sign-out-btn:hover {
+    background-color: var(--error);
+    color: white;
+    border-color: white;
+  }

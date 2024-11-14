@@ -1,0 +1,51 @@
+.sign-in-container {
+    position: relative;
+    padding: 100px 40px;
+    background-color: white;
+    border-radius: 20px;
+    border-top-right-radius: 10cap;
+    min-width: 400px;
+}
+
+.sign-in-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h1.form-headline {
+    position: absolute;
+    left: 20px;
+    top: -50px;
+}
+
+.input-container input {
+    border-radius: 10px;
+    border: 1px solid var(--accent-color);
+    padding: 10px 8px;
+    color: var(--accent-color);
+}
+
+.input-field {
+    position: relative;
+    margin-top: 10px;
+}
+
+.input-label {
+    position: absolute;
+    top: -12px;
+    left: 5px;
+    background-color: white;
+    font-size: 16px;
+    padding: 0px 2px;
+}
+
+.form-submit-btn {
+    border-radius: 10px;
+    padding: 8px 20px;
+    color: white;
+    background-color: var(--accent-color);
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+}
