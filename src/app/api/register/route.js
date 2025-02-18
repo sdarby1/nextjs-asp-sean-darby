@@ -1,55 +1,40 @@
-// pages/api/register.js
-import { PrismaClient } from '@prisma/client';
-import bcrypt from 'bcryptjs';
+import { PrismaClient } from "@prisma/client";
+import bcrypt from "bcryptjs";
 
 const prisma = new PrismaClient();
 
-export async function POST(req, res) {
-  const { name, email, image, provider, password } = await req.json();
-
+export async function POST(req) {
   try {
-    // Check if a user already exists with the same email, but a different provider
-    const existingUser = await prisma.user.findFirst({
-      where: { email: email },
-    });
+    const { name, email, password } = await req.json();
 
-    if (existingUser) {
-      // If the email already exists but from a different provider, reject the registration
-      if (existingUser.provider !== provider) {
-        return new Response(
-          JSON.stringify({ message: "This email is already registered with a different provider." }),
-          { status: 400 }
-        );
-      }
-
-      // If the username is already taken, return an error
-      if (existingUser.name === name) {
-        return new Response(
-          JSON.stringify({ message: "Username already exists" }),
-          { status: 400 }
-        );
-      }
+    if (!name || !email || !password) {
+      return new Response(JSON.stringify({ error: "All fields are required" }), { status: 400 });
     }
 
-    // Hash password for manual registration (only if password is provided)
-    const hashedPassword = password ? await bcrypt.hash(password, 10) : null;
+    // Prüfen, ob der User bereits existiert
+    const existingUser = await prisma.user.findUnique({ where: { email } });
+    if (existingUser) {
+      return new Response(JSON.stringify({ error: "User already exists" }), { status: 400 });
+    }
 
-    // Create the new user
+    // Passwort hashen
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Benutzer speichern
     const newUser = await prisma.user.create({
       data: {
         name,
         email,
-        image,
-        provider,
-        password: hashedPassword, // Only set if password is provided (manual registration)
+        password: hashedPassword,
+        provider: "credentials", // Wichtig für NextAuth
       },
     });
 
-    console.log("New user created:", newUser);
-    return new Response(JSON.stringify({ message: "User successfully created" }), { status: 201 });
+    console.log("Neuer User registriert:", newUser);
 
+    return new Response(JSON.stringify({ message: "User registered successfully" }), { status: 201 });
   } catch (error) {
-    console.error("Error creating user:", error);
+    console.error("Fehler bei der Registrierung:", error);
     return new Response(JSON.stringify({ error: "Internal Server Error" }), { status: 500 });
   }
 }

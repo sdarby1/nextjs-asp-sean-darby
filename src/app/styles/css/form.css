@@ -24,6 +24,7 @@ h1.form-headline {
     border: 1px solid var(--accent-color);
     padding: 10px 8px;
     color: var(--accent-color);
+    width: 80%;
 }
 
 .input-field {
@@ -48,4 +49,35 @@ h1.form-headline {
     border: none;
     cursor: pointer;
     width: fit-content;
+}
+
+
+.cls-1 {
+    fill: #000034;
+    fill-rule: evenodd;
+  }
+
+
+.social-sign-in {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-sign-in a {
+    border: 1px solid var(--accent-color);
+    display: flex;
+    width: 80%;
+    padding: 5px 10px;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: var(--accent-color);
+}
+
+.social-sign-in a svg {
+    height: 40px;
+    width: 40px;
+    margin-right: 20px;
 }

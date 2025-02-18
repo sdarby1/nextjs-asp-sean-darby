@@ -7,7 +7,15 @@ header {
     align-self: center;
     width: 100%;
     justify-content: space-around;
+    padding: 20px 0px;
 }
+
+header a {
+    color: white;
+    text-decoration: none;  
+    height: fit-content;
+}
+
 .account-info {
     display: flex;
     align-items: center;
@@ -23,21 +31,6 @@ header {
     border: 1px solid white;
 }
 
-.social-sign-in {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 20px 0px;
-}
-.social-sign-in a {
-    height: 40px;
-    width: 40px;
-}
-
-.cls-1 {
-    fill: #000034;
-    fill-rule: evenodd;
-  }
 
   .sign-out-btn {
     color: var(--error);

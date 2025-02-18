@@ -30,6 +30,20 @@ h1 {
   color: var(--background-color);
 }
 
+.message-list {
+  color: white;
+}
+
+.profile-text {
+  color: white;
+}
+
+.home {
+  display: flex;
+  flex-direction: column  ;
+  color: white;
+  gap: 30px;
+}
 
 * {
   font-family: Quicksand;
