@@ -23,10 +23,10 @@ export default function ProfilePage() {
 
   if (session) {
     return (
-      <div>
+      <div className="profile-section">
         <h1>Willkommen, {session.user.name || 'Benutzer'}!</h1>
         <p className="profile-text">Email: {session.user.email}</p>
-        <Link href="/chat">Chats</Link>
+        <Link href="/chat" className="chat-link">Chats</Link>
       </div>
     );
   }

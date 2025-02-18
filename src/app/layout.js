@@ -5,6 +5,7 @@ import Link from "next/link";
 import "./styles/css/globals.css";
 import "./styles/css/form.css";
 import "./styles/css/header.css";
+import "./styles/css/profile.css";
 
 import SessionWrapper from "@/components/SessionWrapper";
 import { Header } from "@/components/header";

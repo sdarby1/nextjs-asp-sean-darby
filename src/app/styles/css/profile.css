@@ -1,0 +1,22 @@
+.chat-link {
+    margin-top: 0px;
+    color: white;
+    padding: 5px 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.4s;
+    width: fit-content;
+}
+
+.chat-link:hover {
+    background-color: white;
+    color: var(--accent-color);
+}
+
+.profile-section {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
