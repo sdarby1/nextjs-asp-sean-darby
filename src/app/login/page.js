@@ -16,7 +16,7 @@ export default function LoginPage() {
     setErrorMessage(null); // Fehler zurücksetzen
 
     const res = await signIn('credentials', {
-      redirect: false, // Kein automatisches Redirect
+      redirect: false, 
       email: data.email,
       password: data.password,
     });
@@ -26,7 +26,7 @@ export default function LoginPage() {
       setErrorMessage(res.error);
     } else if (res?.ok) {
       // Weiterleitung auf die gewünschte Seite
-      router.push('/profile'); // Beispielziel
+      router.push('/profile'); 
     }
   };
 

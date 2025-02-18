@@ -18,7 +18,7 @@ export default function ProfilePage() {
   }, [status, router]);
 
   if (status === 'loading') {
-    return <p>Loading...</p>; // Ladeanzeige, während Session überprüft wird
+    return <p>Loading...</p>; 
   }
 
   if (session) {
@@ -31,5 +31,5 @@ export default function ProfilePage() {
     );
   }
 
-  return null; // Fallback, sollte nie erreicht werden
+  return null; 
 }
